@@ -18,8 +18,9 @@ contract Calculator{
     }
 
     function div(uint256 num) public {
-        result/=num;
-    }
+    require(num != 0, "Cannot divide by zero");
+    result /= num;
+}
 
     function get() public view returns (uint256) {
         return result;
